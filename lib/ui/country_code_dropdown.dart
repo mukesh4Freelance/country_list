@@ -14,6 +14,9 @@ class CountryCodeDropDownView extends StatefulWidget {
 }
 
 class _CountryCodeDropDownState extends State<CountryCodeDropDownView> {
+  String? selectedCountry;
+  String? selectedState;
+
   @override
   void initState() {
     super.initState();
@@ -39,6 +42,10 @@ class _CountryCodeDropDownState extends State<CountryCodeDropDownView> {
                     );
                   }).toList(),
               onChanged: (value) {
+                setState(() {
+                  selectedCountry = value;
+                  selectedState = null;
+                });
                 context.read<CountryCodeBloc>().add(
                   CountrySelectedEvent(value ?? ''),
                 );
@@ -60,10 +67,18 @@ class _CountryCodeDropDownState extends State<CountryCodeDropDownView> {
                     }).toList(),
                 onChanged: (value) {
                   setState(() {
+                    selectedState = value;
                     });
                 },
                 decoration: const InputDecoration(border: OutlineInputBorder()),
               ),
+            ),
+            SizedBox(height: 40),
+            // Display Selected Items
+            Text(
+              selectedState != null
+                  ? 'Selected: $selectedCountry > $selectedState'
+                  : Strings.selectState,
             ),
           ],
         );

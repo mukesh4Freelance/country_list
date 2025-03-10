@@ -5,11 +5,19 @@ Fetch country data from the API and based on country's selection fetch states da
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+Requirement for this projects:
+1. Show 2 dropdown in the screens
+2. Fetch country and state data from the API.
+3. Change state data after selecting country's data from the dropdown
 
-A few resources to get you started if this is your first Flutter project:
+Use Dependencies in this project
+flutter_bloc: ^9.1.0 to use the bloc state management
+http: ^1.3.0 to call the API's
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Created 2 dropdown to display country and state' data. 
+Using bloc state, updated the data in the dropdown.
+Constant and string file used to avoid hardcode values in the code.
+
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,

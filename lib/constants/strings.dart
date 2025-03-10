@@ -4,4 +4,5 @@ class Strings {
   static const String failLoadStates = 'Failed to load states';
   static const String hintCountry = 'Select Country';
   static const String hintState = 'Select States';
+  static const String selectState = 'Please select a state from the second dropdown';
 }
